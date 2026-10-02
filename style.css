@@ -1,0 +1,291 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --cyan: #4cf4ff;
+  --gold: #ffcc66;
+  --panel: rgba(9, 17, 28, .93);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px;
+  display: grid;
+  place-items: center;
+  color: #f5f8ff;
+  background:
+    radial-gradient(ellipse at top, #18374a, transparent 60%),
+    #070b12;
+  font-family: Inter, sans-serif;
+}
+
+.game-shell {
+  width: min(1100px, 100%);
+  overflow: hidden;
+  border: 1px solid #365263;
+  border-radius: 18px;
+  background: #101823;
+  box-shadow: 0 25px 90px #0009;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: linear-gradient(110deg, #152635, #0c111b);
+}
+
+.eyebrow {
+  font: 600 10px Orbitron, sans-serif;
+  letter-spacing: 3px;
+  color: var(--cyan);
+}
+
+h1 {
+  margin: 6px 0 0;
+  font: 800 26px Orbitron, sans-serif;
+  letter-spacing: 2px;
+}
+
+h1 span { color: var(--cyan); }
+
+.money { text-align: right; }
+.money small {
+  display: block;
+  color: #a0b4c4;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.money strong {
+  color: #83ff9b;
+  font: 700 20px Orbitron, sans-serif;
+}
+
+.mission {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 20px;
+  background: #182433;
+  border-top: 1px solid #2b3d4d;
+  border-bottom: 1px solid #2b3d4d;
+}
+
+.mission-icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  color: #10151d;
+  background: var(--gold);
+  font-weight: 800;
+}
+
+.mission strong { font-size: 12px; letter-spacing: 1px; }
+.mission p { margin: 4px 0 0; color: #aab9c9; font-size: 12px; }
+.mission-distance {
+  margin-left: auto;
+  color: var(--gold);
+  font: 600 13px Orbitron, sans-serif;
+}
+
+.viewport {
+  position: relative;
+  overflow: hidden;
+  background: #263a32;
+}
+
+#game {
+  display: block;
+  width: 100%;
+  height: min(64vh, 620px);
+  min-height: 360px;
+}
+
+.map-box {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 150px;
+  padding: 5px;
+  border: 1px solid #8295a4;
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+#minimap { display: block; width: 100%; height: auto; }
+.map-box span {
+  display: block;
+  padding: 5px;
+  color: var(--cyan);
+  text-align: center;
+  font: 600 9px Orbitron, sans-serif;
+  letter-spacing: 2px;
+}
+
+.wanted {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--gold);
+  font-size: 22px;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 8px #000;
+}
+
+.speed-panel {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 190px;
+  padding: 14px;
+  border: 1px solid #536979;
+  border-radius: 14px;
+  background: var(--panel);
+  backdrop-filter: blur(8px);
+}
+
+.gear {
+  color: #a5b9c7;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.gear span { color: var(--gold); }
+
+.speed {
+  margin: 5px 0 8px;
+  font: 800 34px Orbitron, sans-serif;
+}
+.speed small { font: 600 10px Inter, sans-serif; color: #b1c4d1; }
+
+.speed-track {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #354451;
+}
+#speedFill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--cyan), var(--gold));
+  transition: width .1s;
+}
+
+button {
+  cursor: pointer;
+  font: 700 12px Inter, sans-serif;
+}
+
+.nitro {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  color: #07151b;
+  border: 0;
+  border-radius: 8px;
+  background: var(--cyan);
+}
+.nitro:disabled { opacity: .45; cursor: default; }
+
+.center-message {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #050a12a8;
+  backdrop-filter: blur(4px);
+}
+.center-message.hidden { display: none; }
+
+.message-card {
+  width: min(370px, 88%);
+  padding: 30px 22px;
+  text-align: center;
+  border: 1px solid #547080;
+  border-radius: 18px;
+  background: #101b27f2;
+  box-shadow: 0 0 50px #0007;
+}
+
+.message-card h2 {
+  margin: 10px 0;
+  font: 800 25px Orbitron, sans-serif;
+}
+.message-card p { color: #b2c2ce; font-size: 13px; }
+
+#startBtn {
+  margin-top: 12px;
+  padding: 14px 20px;
+  border: 0;
+  border-radius: 8px;
+  color: #07151b;
+  background: var(--cyan);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 20px;
+  color: #b6c5d1;
+  font-size: 11px;
+}
+kbd {
+  display: inline-block;
+  margin-right: 3px;
+  padding: 4px 6px;
+  color: white;
+  border: 1px solid #526270;
+  border-radius: 4px;
+  background: #202d39;
+}
+#resetBtn {
+  margin-left: auto;
+  padding: 8px 12px;
+  border: 1px solid #405564;
+  border-radius: 7px;
+  color: white;
+  background: #1a2835;
+}
+
+.mobile-controls { display: none; }
+
+@media (max-width: 600px) {
+  body { padding: 0; }
+  .game-shell { border-radius: 0; }
+  .topbar { padding: 14px; }
+  h1 { font-size: 20px; }
+  .money strong { font-size: 15px; }
+  #game { height: 66vh; min-height: 360px; }
+  .map-box { top: 8px; left: 8px; width: 105px; }
+  .wanted { top: 12px; right: 10px; font-size: 16px; }
+  .speed-panel { right: 8px; bottom: 8px; width: 145px; padding: 10px; }
+  .speed { font-size: 26px; }
+  .controls { gap: 8px; padding: 10px; }
+  .controls span { display: none; }
+  #resetBtn { margin-left: 0; }
+  .mobile-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px;
+    background: #0c141e;
+  }
+  .mobile-controls button {
+    width: 58px;
+    height: 46px;
+    color: var(--cyan);
+    border: 1px solid #456273;
+    border-radius: 10px;
+    background: #172431;
+    font-size: 20px;
+    touch-action: none;
+  }
+}
