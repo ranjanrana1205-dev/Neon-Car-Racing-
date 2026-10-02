@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranjan City — Open World</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">OPEN WORLD PROJECT</div>
+        <h1>RANJAN <span>CITY</span></h1>
+      </div>
+      <div class="money">
+        <small>CASH</small>
+        <strong id="cash">$500</strong>
+      </div>
+    </header>
+
+    <section class="mission">
+      <div class="mission-icon">!</div>
+      <div>
+        <strong id="missionTitle">FIRST DRIVE</strong>
+        <p id="missionText">Drive to the golden marker.</p>
+      </div>
+      <div class="mission-distance" id="distance">-- m</div>
+    </section>
+
+    <section class="viewport">
+      <canvas id="game" aria-label="Open world driving game"></canvas>
+
+      <div class="map-box">
+        <canvas id="minimap" width="140" height="140"></canvas>
+        <span>RANJAN CITY</span>
+      </div>
+
+      <div class="wanted" id="wanted">★ ☆ ☆ ☆ ☆</div>
+
+      <div class="center-message" id="message">
+        <div class="message-card">
+          <div class="eyebrow">WELCOME TO</div>
+          <h2>RANJAN CITY</h2>
+          <p>Your city. Your ride. Your story.</p>
+          <button id="startBtn">START DRIVING →</button>
+        </div>
+      </div>
+
+      <div class="speed-panel">
+        <div class="gear">GEAR <span id="gear">1</span></div>
+        <div class="speed"><span id="speed">0</span><small> KM/H</small></div>
+        <div class="speed-track"><div id="speedFill"></div></div>
+        <button id="nitroBtn" class="nitro">⚡ NITRO <span id="nitroText">READY</span></button>
+      </div>
+    </section>
+
+    <footer class="controls">
+      <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Drive</span>
+      <span><kbd>SPACE</kbd> Handbrake</span>
+      <span><kbd>SHIFT</kbd> Nitro</span>
+      <button id="resetBtn">↻ RESTART</button>
+    </footer>
+
+    <div class="mobile-controls">
+      <button data-key="left">◀</button>
+      <button data-key="up">▲</button>
+      <button data-key="down">▼</button>
+      <button data-key="right">▶</button>
+    </div>
+  </main>
+</body>
+</html>
